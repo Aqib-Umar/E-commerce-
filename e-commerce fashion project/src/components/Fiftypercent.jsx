@@ -3,12 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // You can use icons or text arrows
 
-const PretStyles = () => {
+const Fiftypercent = () => {
   const categories = [
-    { name: 'LONG SHIRT', image: '1.jpeg' },
-    { name: 'KURTA', image: '2.jpeg' },
-    { name: 'KAFTAN', image: '3.jpeg' },
-    { name: 'SHALWAR KAMEEZ', image: '4.jpeg' },
+    { name: 'UNIVERSITY WEAR', image: '1d.png' },
+    { name: 'SHADDI BAYA WEAR ', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { name: 'ABAYAS', image: '2d.png' },
+    { name: 'DESI WEAR', image: '3d.png' },
   ];
 
   return (
@@ -20,7 +20,7 @@ const PretStyles = () => {
           <div className="absolute border-b-[4px] border-[#8B4513] w-[40%] top-1/2 transform -translate-y-1/2 z-0 rounded"></div>
           <div className="relative z-10 bg-[#8B4513] px-10 py-4 rounded-lg shadow-md">
             <h2 className="text-white text-3xl font-semibold tracking-wide" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
-              PRET STYLES
+              50% OFF 
             </h2>
           </div>
         </div>
@@ -46,20 +46,13 @@ const PretStyles = () => {
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-24 h-24 object-cover rounded-full border-2 border-white"
+                    className="w-42 h-42 object-cover rounded-full border-2 border-white"
                   />
                 </div>
 
                 {/* Category Title */}
                 <h3 className="mt-4 text-lg font-semibold">{category.name}</h3>
 
-                {/* Shop Button */}
-                <Link
-                  to={`/women?category=${category.name.toLowerCase().replace(' ', '-')}`}
-                  className="mt-2 inline-block bg-pink-100 text-black px-6 py-2 rounded-full font-medium hover:bg-pink-200 transition-colors"
-                >
-                  SHOP NOW
-                </Link>
               </div>
             ))}
           </div>
@@ -69,4 +62,4 @@ const PretStyles = () => {
   );
 };
 
-export default PretStyles;
+export default Fiftypercent;

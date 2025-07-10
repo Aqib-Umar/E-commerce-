@@ -12,7 +12,7 @@ const Hero = () => {
       <div 
         className="h-150 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" 
+          backgroundImage: "url('9.jpeg')" 
         }}
       >
         {/* Text Content - Bottom Left */}

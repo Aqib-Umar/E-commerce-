@@ -21,7 +21,7 @@ const Home = () => {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-96 object-cover"
+            className="w-full h-130 object-cover"
           />
 
           {/* ID and Price below the card */}
@@ -39,51 +39,8 @@ const Home = () => {
       <CategoryShowcase />
       
       {/* New Arrivals */}
-      <div className="py-8 bg-white">
-  <div className="container mx-auto px-2">
-    {/* Section Title */}
-    <h2
-      className="text-4xl text-center mb-6 tracking-wide"
-      style={{ fontWeight: 'normal', textShadow: '1px 1px 2px #aaa' }}
-    >
-      NEW ARRIVALS
-    </h2>
-
-    {/* Main Wrapper Card */}
-    <div
-      className="bg-[#b9b2b2] p-8 shadow-md max-w-7xl mx-auto"
-      style={{ minHeight: '370px', borderRadius: '1rem' }} // Outer card rounded
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {featuredProducts.slice(4, 8).map((product, index) => (
-          <div
-            key={index}
-            className="p-2"
-            // style={{
-            //   borderRadius: '0px', // No border-radius on card
-            //   boxShadow: '0 4px 20px rgba(105, 105, 105, 0.5)', // Shadow with soft edges
-            //   overflow: 'hidden',
-            //   clipPath: 'inset(0 round 1rem)' // Rounds only the shadow's edge
-            // }}
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-72 object-cover"
-              style={{ borderRadius: '0px' }} // No rounded image
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
-{/*Explore Designers brands section */} 
-
-<div className="py-12 bg-white">
+     <div className="py-12 bg-white">
   <div className="container mx-auto px-4">
-    {/* Section Title - Bold with Shadow */}
     <h2
       className="text-3xl font-bold text-center mb-10 tracking-wide"
       style={{ textShadow: '1px 1px 2px #aaa' }}
@@ -91,63 +48,40 @@ const Home = () => {
       FEATURED DESIGNER BRAND
     </h2>
 
-    {/* First Row of Designer Cards */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mb-8">
-      {[
-        'Designer A',
-        'Designer B',
-        'Designer C',
-        'Designer D',
-        'Designer E',
-        'Designer F',
-      ].map((name, index) => (
-        <div
-          key={index}
-          className="flex items-center justify-center bg-[#f3f3f3] p-4 rounded-md shadow-md hover:shadow-lg transition"
-        >
-          <img
-            src={`https://via.placeholder.com/100x60?text=${encodeURIComponent(
-              name
-            )}`}
-            alt={name}
-            className="h-12 object-contain"
-          />
-        </div>
-      ))}
-    </div>
-
-    {/* Second Row of Designer Cards + Explore Button */}
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
       {[
-        'Designer G',
-        'Designer H',
-        'Designer I',
-        'Designer J',
-        'Designer K',
-      ].map((name, index) => (
-        <div
-          key={index}
-          className="flex items-center justify-center bg-[#f3f3f3] p-4 rounded-md shadow-md hover:shadow-lg transition"
-        >
+        { name: 'Khaadi', logo: '1d.png' },
+        { name: 'Gul Ahmed', logo: '2d.png' },
+        { name: 'Sana Safinaz', logo: '3d.png' },
+        { name: 'Maria B', logo: '4d.png' },
+        { name: 'Alkaram', logo: '5d.png' },
+        { name: 'Limelight', logo: '6d.png' },
+        { name: 'Bonanza Satrangi', logo: '7d.png' },
+        { name: 'Beechtree', logo: '8d.jpeg' },
+        { name: 'Nishat Linen', logo: '2d.png' },
+        { name: 'Ego', logo: '3d.png' },
+        { name: 'Outfitters', logo: '6d.png' },
+      ].map((brand, index) => (
+        <div key={index} className="w-full h-[60px] flex items-center justify-center">
           <img
-            src={`https://via.placeholder.com/100x60?text=${encodeURIComponent(
-              name
-            )}`}
-            alt={name}
-            className="h-12 object-contain"
+            src={brand.logo}
+            alt={brand.name}
+            className="w-full h-full object-contain"
           />
         </div>
       ))}
 
       {/* Explore More Button */}
-      <div className="flex items-center justify-center bg-[#f3f3f3] p-4 rounded-md shadow-md hover:shadow-lg transition cursor-pointer">
-        <button className="text-sm font-bold text-gray-800 flex items-center gap-1">
-          Explore More <span className="text-xl font-bold">→</span>
-        </button>
+      <div className="w-full h-[60px] flex items-center justify-center cursor-pointer">
+        <div className="flex flex-col items-center">
+          <span className="text-pink-600 font-semibold text-sm mb-1">Explore More</span>
+          <span className="text-pink-600 text-2xl font-bold">→</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
@@ -169,9 +103,9 @@ const Home = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
       <div className="text-center">
         <img
-          src="https://via.placeholder.com/400x250?text=Serika"
+          src="18.jpeg"
           alt="Serika"
-          className="w-full object-cover"
+          className="w-full h-[500px]object-cover"
         />
         <p className="mt-4 text-lg font-semibold text-gray-800">
           Serika Premium up to 60% off
@@ -180,9 +114,9 @@ const Home = () => {
 
       <div className="text-center">
         <img
-          src="https://via.placeholder.com/400x250?text=Al-Harir"
+          src="19.jpeg"
           alt="Al-Harir"
-          className="w-full object-cover"
+          className="w-full h-[500px] object-cover"
         />
         <p className="mt-4 text-lg font-semibold text-gray-800">
           Al-Harir Apparel up to 40% off
@@ -191,9 +125,9 @@ const Home = () => {
 
       <div className="text-center">
         <img
-          src="https://via.placeholder.com/400x250?text=Inayat"
+          src="24.jpeg"
           alt="Inayat"
-          className="w-full object-cover"
+          className="w-full h-[500px] object-cover"
         />
         <p className="mt-4 text-lg font-semibold text-gray-800">
           Inayat up to 30% off
@@ -204,9 +138,9 @@ const Home = () => {
     {/* Full Width Banner Image */}
     <div className="max-w-7xl mx-auto">
       <img
-        src="https://via.placeholder.com/1400x400?text=Big+Promo+Banner"
+        src="1528.jpg"
         alt="Promotional Banner"
-        className="w-full h-[300px] object-cover rounded-md"
+        className="w-full h-[500px] object-cover rounded-md"
       />
     </div>
   </div>

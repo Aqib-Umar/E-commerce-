@@ -33,9 +33,14 @@ const Header = () => {
           <div className="w-24 md:w-36"></div>
 
           {/* Logo - Centered */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
-            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-          </div>
+<div className="absolute left-1/2 transform -translate-x-1/2">
+  <img
+    src="logo1.png"
+    alt="Logo"
+    className="w-28 h-28 object-contain rounded-xl "
+  />
+</div>
+
 
           {/* Right side icons */}
           <div className="flex items-center space-x-6">

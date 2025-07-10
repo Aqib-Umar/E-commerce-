@@ -5,11 +5,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Women from './pages/Women';
-import ProductDetail from './pages/Productdetail';
+import ProductDetail from './pages/ProductDetails';
+//import ProductDetail from './pages/Productdetail';
 import TopSales from './pages/TopSales';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Unstitched from './pages/Unstitched';
+import Stitched from './pages/stitched';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/women" element={<Women />} />
+            <Route path="/stitched" element={<Stitched />}/>
             <Route path="/product/:id" element={<ProductDetail />} />
+            
             <Route path="/top-sales" element={<TopSales />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

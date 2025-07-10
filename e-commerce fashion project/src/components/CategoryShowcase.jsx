@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const CategoryShowcase = () => {
   const categories = [
-    { name: 'SILK', image: 'https://images.unsplash.com/photo-1520004434532-668416a08753?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { name: 'COTTON NET', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { name: 'ORGANZA', image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { name: 'LAWN', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { name: 'SILK', image: '4.jpeg' },
+    { name: 'COTTON NET', image: '3.jpeg' },
+    { name: 'ORGANZA', image: '2.jpeg' },
+    { name: 'LAWN', image: '1.jpeg' },
   ];
 
   return (
@@ -29,7 +29,7 @@ const CategoryShowcase = () => {
             <div key={index} className="flex flex-col items-center">
               {/* Circle with stronger border and light pink background */}
               <div className="w-48 h-48 bg-pink-50 border-[10px] border-gray-500 rounded-full flex items-center justify-center relative">
-                <img
+                <img 
                   src={category.image}
                   alt={category.name}
                   className="w-24 h-24 object-cover rounded-full border-2 border-white"
