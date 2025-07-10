@@ -7,25 +7,25 @@ const Women = () => {
     {
       title: 'UNIVERSITY WEAR',
       items: ['Short shirts', 'Long shirts', 'Frocks', 'Gowns'],
-      image: '1.jpeg',
+      image: '/images/1.jpeg',
       bgColor: '#ffe6f0', // very light pink
     },
     {
       title: 'SHADDI BAYA WEAR',
       items: ['Embroidered', 'Traditional', 'Luxury Pret', 'Maxi'],
-      image: '2.jpeg',
+      image: '/images/2.jpeg',
       bgColor: '#fddde6', // light pink
     },
     {
       title: 'DESI WEAR',
       items: ['Kameez Shalwar', 'Dupattas', 'Churidars', 'Angarkha'],
-      image: '22.jpeg',
+      image: '/images/22.jpeg',
       bgColor: '#f0f0f0', // light silver
     },
     {
       title: 'ABAYAS',
       items: ['Plain Abayas', 'Embellished', 'Front open', 'Layered'],
-      image: '25.jpeg',
+      image: '/images/25.jpeg',
       bgColor: '#ffe5b4', // light peach
     },
   ];
@@ -96,7 +96,7 @@ const Women = () => {
     {/* Product Card 1 */}
     <div className="flex flex-col">
       <img
-        src="1.jpeg"
+        src="/images/1.jpeg"
         alt="Classic Kameez"
         className="w-full h-[450px] object-cover"
 
@@ -111,7 +111,7 @@ const Women = () => {
     {/* Product Card 2 */}
     <div className="flex flex-col">
       <img
-        src="22.jpeg"
+        src="/images/22.jpeg"
         alt="Drop Shoulder"
         className="w-full h-[450px] object-cover"
 
@@ -126,7 +126,7 @@ const Women = () => {
     {/* Product Card 3 */}
     <div className="flex flex-col">
       <img
-        src="21.jpeg"
+        src="/images/21.jpeg"
         alt="Classic Kurta"
         className="w-full h-[450px] object-cover"
       />
@@ -140,7 +140,7 @@ const Women = () => {
     {/* Product Card 4 */}
     <div className="flex flex-col">
       <img
-        src="20.jpeg"
+        src="/images/20.jpeg"
         alt="Summer Kurti"
         className="w-full h-[450px] object-cover"
       />
@@ -154,7 +154,7 @@ const Women = () => {
     {/* Product Card 5 */}
     <div className="flex flex-col">
       <img
-        src="25.jpeg"
+        src="/images/25.jpeg"
         alt="Elegant Frock"
         className="w-full h-[450px] object-cover"
       />
@@ -168,7 +168,7 @@ const Women = () => {
     {/* Product Card 6 */}
     <div className="flex flex-col">
       <img
-        src="18.jpeg"
+        src="/images/18.jpeg"
         alt="Minimalist Shirt"
         className="w-full h-[450px] object-cover"
       />
@@ -195,7 +195,7 @@ const Women = () => {
     {/* Large Left Card */}
     <div className="col-span-1 lg:col-span-1  p-4">
       <img
-        src="11.jpeg"
+        src="/images/11.jpeg"
         alt="New Arrival 1"
         className="w-full h-[540px] object-cover"
       />
@@ -205,28 +205,28 @@ const Women = () => {
     <div className="col-span-1 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div className=" p-2">
         <img
-          src="13.jpeg"
+          src="/images/13.jpeg"
           alt="New Arrival 2"
           className="w-full h-[250px] object-cover"
         />
       </div>
       <div className=" p-2">
         <img
-          src="14.jpeg"
+          src="/images/14.jpeg"
           alt="New Arrival 3"
           className="w-full h-[250px] object-cover"
         />
       </div>
       <div className=" p-2">
         <img
-          src="9.jpeg"
+          src="/images/9.jpeg"
           alt="New Arrival 4"
           className="w-full h-[250px] object-cover"
         />
       </div>
       <div className=" p-2">
         <img
-          src="6.jpeg"
+          src="/images/6.jpeg"
           alt="New Arrival 5"
           className="w-full h-[250px] object-cover"
         />

@@ -20,7 +20,7 @@ const About = () => {
     <div key={index} className="flex flex-col items-center">
       <div className="w-32 h-32 rounded-full border-8 border-[#8B4513] bg-pink-100 flex items-center justify-center overflow-hidden">
         <img
-          src="logo1.png"
+          src="/images/logo1.png"
           alt={member.name}
           className="w-16 h-16 object-cover rounded-full"
         />

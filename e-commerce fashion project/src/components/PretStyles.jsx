@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'; // You can use icons o
 
 const PretStyles = () => {
   const categories = [
-    { name: 'LONG SHIRT', image: '1.jpeg' },
-    { name: 'KURTA', image: '2.jpeg' },
-    { name: 'KAFTAN', image: '3.jpeg' },
-    { name: 'SHALWAR KAMEEZ', image: '4.jpeg' },
+    { name: 'LONG SHIRT', image: '/images/1.jpeg' },
+    { name: 'KURTA', image: '/images/2.jpeg' },
+    { name: 'KAFTAN', image: '/images/3.jpeg' },
+    { name: 'SHALWAR KAMEEZ', image: '/images/4.jpeg' },
   ];
 
   return (

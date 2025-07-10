@@ -11,24 +11,24 @@ import {
   ChevronDown,
 } from 'lucide-react';
 const stitched1Pcs = [
-  { id: 1, img: '25.jpeg', title: 'Ladies suit AL 01', price: 1900 },
-  { id: 2, img: '24.jpeg', title: 'Ladies suit AL 02', price: 2000 },
-  { id: 3, img: '23.jpeg', title: 'Ladies suit AL 03', price: 2100 },
-  { id: 4, img: '22.jpeg', title: 'Ladies suit AL 04', price: 2200 },
+  { id: 1, img: '/images/25.jpeg', title: 'Ladies suit AL 01', price: 1900 },
+  { id: 2, img: '/images/24.jpeg', title: 'Ladies suit AL 02', price: 2000 },
+  { id: 3, img: '/images/23.jpeg', title: 'Ladies suit AL 03', price: 2100 },
+  { id: 4, img: '/images/22.jpeg', title: 'Ladies suit AL 04', price: 2200 },
 ];
 
 const stitched2Pcs = [
-  { id: 5, img: '21.jpeg', title: 'Ladies suit BL 01', price: 2650 },
-  { id: 6, img: '20.jpeg', title: 'Ladies suit BL 02', price: 2800 },
-  { id: 7, img: '19.jpeg', title: 'Ladies suit BL 03', price: 2950 },
-  { id: 8, img: '18.jpeg', title: 'Ladies suit BL 04', price: 3100 },
+  { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650 },
+  { id: 6, img: '/images/20.jpeg', title: 'Ladies suit BL 02', price: 2800 },
+  { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950 },
+  { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100 },
 ];
 
 const stitched3Pcs = [
-  { id: 9, img: '17.jpeg', title: 'Ladies suit CL 01', price: 3400 },
-  { id: 10, img: '16.jpeg', title: 'Ladies suit CL 02', price: 3600 },
-  { id: 11, img: '15.jpeg', title: 'Ladies suit CL 03', price: 3800 },
-  { id: 12, img: '14.jpeg', title: 'Ladies suit CL 04', price: 4000 },
+  { id: 9, img: '/images/17.jpeg', title: 'Ladies suit CL 01', price: 3400 },
+  { id: 10, img: '/images/16.jpeg', title: 'Ladies suit CL 02', price: 3600 },
+  { id: 11, img: '/images/15.jpeg', title: 'Ladies suit CL 03', price: 3800 },
+  { id: 12, img: '/images/14.jpeg', title: 'Ladies suit CL 04', price: 4000 },
 ];
 
 
@@ -110,9 +110,9 @@ export default function Stitched() {
   {/* Circles with separate images */}
   <div className="flex gap-10">
     {[
-      { src: '1.jpeg', alt: 'PSC 1' },
-      { src: '2.jpeg', alt: 'PSC 2' },
-      { src: '3.jpeg', alt: 'PSC 3' },
+      { src: '/images/1.jpeg', alt: 'PSC 1' },
+      { src: '/images/2.jpeg', alt: 'PSC 2' },
+      { src: '/images/3.jpeg', alt: 'PSC 3' },
     ].map((image, index) => (
       <div key={index} className="flex flex-col items-center">
         <div className="w-32 h-32 rounded-full border-[8px] border-[#5C4033] bg-pink-100 flex items-center justify-center">

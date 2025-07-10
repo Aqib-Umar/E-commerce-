@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'; // You can use icons o
 
 const Fiftypercent = () => {
   const categories = [
-    { name: 'UNIVERSITY WEAR', image: '1d.png' },
+    { name: 'UNIVERSITY WEAR', image: '/images/1d.png' },
     { name: 'SHADDI BAYA WEAR ', image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { name: 'ABAYAS', image: '2d.png' },
-    { name: 'DESI WEAR', image: '3d.png' },
+    { name: 'ABAYAS', image: '/images/2d.png' },
+    { name: 'DESI WEAR', image: '/images/3d.png' },
   ];
 
   return (

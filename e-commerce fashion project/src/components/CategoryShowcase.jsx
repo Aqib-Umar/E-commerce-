@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const CategoryShowcase = () => {
   const categories = [
-    { name: 'SILK', image: '4.jpeg' },
-    { name: 'COTTON NET', image: '3.jpeg' },
-    { name: 'ORGANZA', image: '2.jpeg' },
-    { name: 'LAWN', image: '1.jpeg' },
+    { name: 'SILK', image: '/images/4.jpeg' },
+    { name: 'COTTON NET', image: '/images/3.jpeg' },
+    { name: 'ORGANZA', image: '/images/2.jpeg' },
+    { name: 'LAWN', image: '/images/1.jpeg' },
   ];
 
   return (

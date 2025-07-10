@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 items-center">
           {/* Logo on the left, centered vertically */}
           <div className="flex justify-center md:justify-start">
-            <img src="/logo1.png" alt="Logo" className="w-32 h-auto" />
+            <img src="/images/logo1.png" alt="Logo" className="w-32 h-auto" />
           </div>
 
           {/* Content columns on the right */}

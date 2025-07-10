@@ -35,7 +35,7 @@ const Header = () => {
           {/* Logo - Centered */}
 <div className="absolute left-1/2 transform -translate-x-1/2">
   <img
-    src="logo1.png"
+    src="/images/logo1.png"
     alt="Logo"
     className="w-28 h-28 object-contain rounded-xl "
   />

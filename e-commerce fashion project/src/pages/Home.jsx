@@ -50,17 +50,17 @@ const Home = () => {
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
       {[
-        { name: 'Khaadi', logo: '1d.png' },
-        { name: 'Gul Ahmed', logo: '2d.png' },
-        { name: 'Sana Safinaz', logo: '3d.png' },
-        { name: 'Maria B', logo: '4d.png' },
-        { name: 'Alkaram', logo: '5d.png' },
-        { name: 'Limelight', logo: '6d.png' },
-        { name: 'Bonanza Satrangi', logo: '7d.png' },
-        { name: 'Beechtree', logo: '8d.jpeg' },
-        { name: 'Nishat Linen', logo: '2d.png' },
-        { name: 'Ego', logo: '3d.png' },
-        { name: 'Outfitters', logo: '6d.png' },
+        { name: 'Khaadi', logo: '/images/1d.png' },
+        { name: 'Gul Ahmed', logo: '/images/2d.png' },
+        { name: 'Sana Safinaz', logo: '/images/3d.png' },
+        { name: 'Maria B', logo: '/images/4d.png' },
+        { name: 'Alkaram', logo: '/images/5d.png' },
+        { name: 'Limelight', logo: '/images/6d.png' },
+        { name: 'Bonanza Satrangi', logo: '/images/7d.png' },
+        { name: 'Beechtree', logo: '/images/8d.jpeg' },
+        { name: 'Nishat Linen', logo: '/images/2d.png' },
+        { name: 'Ego', logo: '/images/3d.png' },
+        { name: 'Outfitters', logo: '/images/6d.png' },
       ].map((brand, index) => (
         <div key={index} className="w-full h-[60px] flex items-center justify-center">
           <img
@@ -103,7 +103,7 @@ const Home = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
       <div className="text-center">
         <img
-          src="18.jpeg"
+          src="/images/18.jpeg"
           alt="Serika"
           className="w-full h-[500px]object-cover"
         />
@@ -114,7 +114,7 @@ const Home = () => {
 
       <div className="text-center">
         <img
-          src="19.jpeg"
+          src="/images/19.jpeg"
           alt="Al-Harir"
           className="w-full h-[500px] object-cover"
         />
@@ -125,7 +125,7 @@ const Home = () => {
 
       <div className="text-center">
         <img
-          src="24.jpeg"
+          src="/images/24.jpeg"
           alt="Inayat"
           className="w-full h-[500px] object-cover"
         />
@@ -138,7 +138,7 @@ const Home = () => {
     {/* Full Width Banner Image */}
     <div className="max-w-7xl mx-auto">
       <img
-        src="1528.jpg"
+        src="/images/1528.jpg"
         alt="Promotional Banner"
         className="w-full h-[500px] object-cover rounded-md"
       />

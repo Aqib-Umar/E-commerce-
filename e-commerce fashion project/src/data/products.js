@@ -7,7 +7,7 @@ export const featuredProducts = [
     price: '9,030',
     originalPrice: '11,000',
     discount: 40,
-    image: '1.jpeg',
+    image: '/images/1.jpeg',
     sku: 'ICA230601',
     details: 'Top Fabric: Digital Printed Embroidered Cambric | 3m, Bottom Fabric: Digital Printed Cambric | 2.5m, Technique: Printed Embroidered, Fabric Contents: 100% Cotton'
   },
@@ -18,7 +18,7 @@ export const featuredProducts = [
     price: '9,030',
     originalPrice: '12,000',
     discount: 30,
-    image: '2.jpeg',
+    image: '/images/2.jpeg',
     sku: 'ICA230602',
     details: 'Fabric: Raw Silk, Technique: Hand Embroidered, Fabric Contents: 100% Silk'
   },
@@ -29,7 +29,7 @@ export const featuredProducts = [
     price: '8,820',
     originalPrice: '10,500',
     discount: 20,
-    image: '3.jpeg',
+    image: '/images/3.jpeg',
     sku: 'ICA230603',
     details: 'Fabric: Premium Cambric, Technique: Printed, Fabric Contents: 100% Cotton'
   },
@@ -39,7 +39,7 @@ export const featuredProducts = [
     description: 'Stitched 2pcs',
     price: '1,800',
     discount: 0,
-    image: '5.jpeg',
+    image: '/images/5.jpeg',
     sku: 'AL230601',
     details: 'Ready to wear stitched suit, Fabric: Cotton, Sizes available: XS, S, M, L, XL'
   },
@@ -49,7 +49,7 @@ export const featuredProducts = [
     description: 'Printed | Cambric',
     price: '2,690',
     discount: 0,
-    image: '5.jpeg',
+    image: '/images/5.jpeg',
     sku: 'KC230601',
     details: 'Fabric: Premium Cambric, Technique: Printed, Fabric Contents: 100% Cotton'
   },
@@ -59,7 +59,7 @@ export const featuredProducts = [
     description: 'Yarn Dyed Embroidered',
     price: '5,490',
     discount: 15,
-    image: '6.jpeg',
+    image: '/images/6.jpeg',
     sku: 'DS230601',
     details: 'Fabric: Raw Silk, Technique: Hand Embroidered, Fabric Contents: 100% Silk'
   },
@@ -69,7 +69,7 @@ export const featuredProducts = [
     description: 'Printed | Cambric',
     price: '2,190',
     discount: 0,
-    image: '7.jpeg',
+    image: '/images/7.jpeg',
     sku: 'CK230602',
     details: 'Fabric: Premium Cambric, Technique: Printed, Fabric Contents: 100% Cotton'
   },
@@ -79,7 +79,7 @@ export const featuredProducts = [
     description: 'Dyed Embroidered | Waffle Jacquard',
     price: '4,490',
     discount: 25,
-    image: '8.jpeg',
+    image: '/images/8.jpeg',
     sku: 'DS230602',
     details: 'Fabric: Waffle Jacquard, Technique: Dyed Embroidered, Fabric Contents: 100% Cotton'
   }
