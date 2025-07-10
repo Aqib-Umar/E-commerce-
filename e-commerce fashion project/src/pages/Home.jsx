@@ -35,7 +35,8 @@ const Home = () => {
   </div>
 </div>
 
-      
+
+
       <CategoryShowcase />
       
       {/* New Arrivals */}
