@@ -19,7 +19,7 @@ const stitched1Pcs = [
 
 const stitched2Pcs = [
   { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650 },
-  { id: 6, img: '/images/20.jpeg', title: 'Ladies suit BL 02', price: 2800 },
+  { id: 6, img: '/images/17.jpeg', title: 'Ladies suit BL 02', price: 2800 },
   { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950 },
   { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100 },
 ];
@@ -53,48 +53,51 @@ export default function Stitched() {
   return (
     <div className="py-10 bg-gray-50 px-4">
       {/* Top Headings */}
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">WOMEN'S</h1>
-        <h2 className="text-5xl font-bold text-gray-900 mb-4">Stitched Suit</h2>
-        <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Elisha offers a vast selection of women’s clothing to shop. Each season <br />
+      <div className="text-center mb-6 px-4">
+  <h1 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2">WOMEN'S</h1>
+  <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">Stitched Suit</h2>
+  <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+   Elisha offers a vast selection of women’s clothing to shop. Each season <br />
           finds a careful assortment of clothing no matter the season, trend-driven <br />
           and classic pieces are available. Elisha is committed to helping shoppers <br />
           be their most stylish selves.
-        </p>
-      </div>
+  </p>
+</div>
+
 
       {/* Filters with Dropdowns */}
-      <div className="flex flex-wrap justify-center gap-5 mb-12 relative z-10">
-        {filters.map((filter, index) => (
-          <div key={index} className="relative">
-            <button
-              onClick={() => toggleDropdown(index)}
-              className="bg-pink-100 text-gray-700 w-52 px-5 py-2 rounded-full shadow-sm flex items-center justify-center hover:bg-pink-200 transition"
-            >
-              {filter.icon}
-              <span className="text-sm font-medium">{filter.label}</span>
-              <ChevronDown className="w-4 h-4 ml-2" />
-            </button>
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mb-10 px-2 sm:px-4">
+  {filters.map((filter, index) => (
+    <div key={index} className="relative w-full sm:w-auto">
+      <button
+        onClick={() => toggleDropdown(index)}
+        className="bg-pink-100 text-gray-700 w-full sm:w-52 px-4 py-2 rounded-full shadow-sm flex items-center justify-center hover:bg-pink-200 transition"
+      >
+        {filter.icon}
+        <span className="text-sm font-medium">{filter.label}</span>
+        <ChevronDown className="w-4 h-4 ml-2" />
+      </button>
 
-            {activeDropdown === index && (
-              <div className="absolute mt-2 left-0 w-full bg-pink-50 rounded-lg shadow-lg border border-pink-200 z-20">
-                <ul className="text-sm text-gray-700 py-2">
-                  {filter.options.map((option, i) => (
-                    <li
-                      key={i}
-                      className="px-4 py-2 hover:bg-pink-100 cursor-pointer"
-                      onClick={() => setActiveDropdown(null)} // optional: close dropdown on select
-                    >
-                      {option}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* Dropdown stays responsive */}
+      {activeDropdown === index && (
+        <div className="absolute mt-2 left-0 w-full bg-pink-50 rounded-lg shadow-lg border border-pink-200 z-20">
+          <ul className="text-sm text-gray-700 py-2">
+            {filter.options.map((option, i) => (
+              <li
+                key={i}
+                className="px-4 py-2 hover:bg-pink-100 cursor-pointer"
+                onClick={() => setActiveDropdown(null)}
+              >
+                {option}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
 
       {/* Categories Heading with Shorter Bold Line */}
       <div className="relative flex justify-center items-center mb-10">
@@ -104,35 +107,25 @@ export default function Stitched() {
         </div>
       </div>
 
-      {/* Circular Designs Section */}
+     
 {/* Circular Designs Section */}
-<div className="flex items-center justify-center gap-10 mb-4 px-4 relative">
-  {/* Circles with separate images */}
-  <div className="flex gap-10">
-    {[
-      { src: '/images/1.jpeg', alt: 'PSC 1' },
-      { src: '/images/2.jpeg', alt: 'PSC 2' },
-      { src: '/images/3.jpeg', alt: 'PSC 3' },
-    ].map((image, index) => (
-      <div key={index} className="flex flex-col items-center">
-        <div className="w-32 h-32 rounded-full border-[8px] border-[#5C4033] bg-pink-100 flex items-center justify-center">
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="w-26 h-26 rounded-full object-cover"
-          />
-        </div>
+<div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-4 px-4">
+  {[
+    { src: '/images/1.jpeg', alt: 'PSC 1', label: '1PSC' },
+    { src: '/images/2.jpeg', alt: 'PSC 2', label: '2PSC' },
+    { src: '/images/3.jpeg', alt: 'PSC 3', label: '3PSC' },
+  ].map((image, index) => (
+    <div key={index} className="flex flex-col items-center">
+      <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-[6px] sm:border-[8px] border-[#5C4033] bg-pink-100 flex items-center justify-center">
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="w-20 h-20 sm:w-26 sm:h-26 rounded-full object-cover"
+        />
       </div>
-    ))}
-  </div>
-</div>
-
-
-{/* Labels under Circles */}
-<div className="flex justify-center gap-32 mb-8">
-  <p className="text-lg font-semibold text-gray-700">1PSC</p>
-  <p className="text-lg font-semibold text-gray-700">2PSC</p>
-  <p className="text-lg font-semibold text-gray-700">3PSC</p>
+      <p className="text-base sm:text-lg font-semibold text-gray-700 mt-2">{image.label}</p>
+    </div>
+  ))}
 </div>
 
 {/* All Products Heading */}
@@ -155,10 +148,11 @@ export default function Stitched() {
     <div key={item.id} className="flex flex-col">
       <Link to={`/product/${item.id}`}>
         <img
-          src={item.img}
-          alt={item.title}
-          className="w-full h-[300px] object-cover"
-        />
+  src={item.img}
+  alt={item.title}
+  className="w-full h-96 sm:h-88 object-cover"
+/>
+
       </Link>
       <div className="mt-2 text-left text-sm font-medium text-gray-700">
         {item.title} <br />
@@ -184,7 +178,7 @@ export default function Stitched() {
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-[300px] object-cover"
+          className="w-full h-102 sm:h-102 object-cover"
         />
       </Link>
       <div className="mt-2 text-left text-sm font-medium text-gray-700">
@@ -211,7 +205,7 @@ export default function Stitched() {
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-[300px] object-cover"
+          className="w-full h-106 sm:h-102 object-cover"
         />
       </Link>
       <div className="mt-2 text-left text-sm font-medium text-gray-700">
@@ -237,31 +231,25 @@ export default function Stitched() {
 
     {/* Main Wrapper Card */}
     <div
-      className="bg-[#b9b2b2] p-8 shadow-md max-w-7xl mx-auto"
-      style={{ minHeight: '370px', borderRadius: '1rem' }} // Outer card rounded
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {featuredProducts.slice(4, 8).map((product, index) => (
-          <div
-            key={index}
-            className="p-2"
-            // style={{
-            //   borderRadius: '0px', // No border-radius on card
-            //   boxShadow: '0 4px 20px rgba(105, 105, 105, 0.5)', // Shadow with soft edges
-            //   overflow: 'hidden',
-            //   clipPath: 'inset(0 round 1rem)' // Rounds only the shadow's edge
-            // }}
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-72 object-cover"
-              style={{ borderRadius: '0px' }} // No rounded image
-            />
-          </div>
-        ))}
+  className="bg-[#b9b2b2] p-4 sm:p-6 md:p-8 shadow-md max-w-7xl mx-auto rounded-xl"
+  style={{ minHeight: '370px' }}
+>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+    {featuredProducts.slice(4, 8).map((product, index) => (
+      <div
+        key={index}
+        className="p-2  overflow-hidden"
+      >
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-72 sm:h-66 md:h-78 object-cover"
+        />
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   </div>
 </div>
 

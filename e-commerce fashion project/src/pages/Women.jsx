@@ -52,31 +52,32 @@ const Women = () => {
 
         {/* Cards in 2 rows of 2 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {categoryDetails.map((cat, index) => (
-            <div
-              key={index}
-              className="flex items-center p-6 rounded-lg"
-              style={{ backgroundColor: cat.bgColor, height: '400px', maxWidth: '550px' }}
-            >
-              {/* Image on the left */}
-              <img
-                src={cat.image}
-                alt={cat.title}
-                className="w-80 h-90 rounded-2xl  mr-6"
-              />
+  {categoryDetails.map((cat, index) => (
+    <div
+      key={index}
+      className="flex flex-col sm:flex-row items-center p-4 sm:p-6 rounded-lg"
+      style={{ backgroundColor: cat.bgColor, maxWidth: '100%' }}
+    >
+      {/* Image */}
+      <img
+        src={cat.image}
+        alt={cat.title}
+        className="w-full sm:w-84 h-92 sm:h-106 object-cover rounded-2xl mb-4 sm:mb-0 sm:mr-6"
+      />
 
-              {/* Text on the right */}
-              <div className="flex flex-col justify-end">
-                <h3 className="text-xl font-bold mb-2">{cat.title}</h3>
-                {cat.items.map((item, i) => (
-                  <p key={i} className="text-gray-700 text-base leading-relaxed">
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Text */}
+      <div className="text-center sm:text-left">
+        <h3 className="text-lg sm:text-xl font-bold mb-2">{cat.title}</h3>
+        {cat.items.map((item, i) => (
+          <p key={i} className="text-gray-700 text-sm sm:text-base">
+            {item}
+          </p>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
 
       <Fiftypercent/>
@@ -92,93 +93,30 @@ const Women = () => {
   </div>
 
   {/* Products Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-    {/* Product Card 1 */}
-    <div className="flex flex-col">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  {[
+    { img: '/images/1.jpeg', title: 'Classic Kameez', desc: 'Printed | Cambric', price: '2,690' },
+    { img: '/images/22.jpeg', title: 'Drop Shoulder', desc: 'Yarn Dyed Embroidered | Raw Silk', price: '5,490' },
+    { img: '/images/21.jpeg', title: 'Classic Kurta', desc: 'Printed | Cambric', price: '2,190' },
+    { img: '/images/17.jpeg', title: 'Summer Kurti', desc: 'Printed | Lawn', price: '2,990' },
+    { img: '/images/25.jpeg', title: 'Elegant Frock', desc: 'Embroidered | Cotton Net', price: '4,850' },
+    { img: '/images/18.jpeg', title: 'Minimalist Shirt', desc: 'Solid | Lawn', price: '1,950' },
+  ].map((p, idx) => (
+    <div key={idx} className="flex flex-col">
       <img
-        src="/images/1.jpeg"
-        alt="Classic Kameez"
-        className="w-full h-[450px] object-cover"
-
+        src={p.img}
+        alt={p.title}
+        className="w-full h-108 sm:h-126 object-cover rounded-md"
       />
       <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Classic Kameez</p>
-        <p className="text-gray-600 text-sm">Printed | Cambric</p>
-        <p className="text-black font-semibold text-sm">Rs. 2,690</p>
+        <p className="font-medium text-sm sm:text-base text-gray-800">{p.title}</p>
+        <p className="text-gray-600 text-sm">{p.desc}</p>
+        <p className="text-black font-semibold text-sm">Rs. {p.price}</p>
       </div>
     </div>
+  ))}
+</div>
 
-    {/* Product Card 2 */}
-    <div className="flex flex-col">
-      <img
-        src="/images/22.jpeg"
-        alt="Drop Shoulder"
-        className="w-full h-[450px] object-cover"
-
-      />
-      <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Drop Shoulder</p>
-        <p className="text-gray-600 text-sm">Yarn Dyed Embroidered | Raw Silk</p>
-        <p className="text-black font-semibold text-sm">Rs. 5,490</p>
-      </div>
-    </div>
-
-    {/* Product Card 3 */}
-    <div className="flex flex-col">
-      <img
-        src="/images/21.jpeg"
-        alt="Classic Kurta"
-        className="w-full h-[450px] object-cover"
-      />
-      <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Classic Kurta</p>
-        <p className="text-gray-600 text-sm">Printed | Cambric</p>
-        <p className="text-black font-semibold text-sm">Rs. 2,190</p>
-      </div>
-    </div>
-
-    {/* Product Card 4 */}
-    <div className="flex flex-col">
-      <img
-        src="/images/20.jpeg"
-        alt="Summer Kurti"
-        className="w-full h-[450px] object-cover"
-      />
-      <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Summer Kurti</p>
-        <p className="text-gray-600 text-sm">Printed | Lawn</p>
-        <p className="text-black font-semibold text-sm">Rs. 2,990</p>
-      </div>
-    </div>
-
-    {/* Product Card 5 */}
-    <div className="flex flex-col">
-      <img
-        src="/images/25.jpeg"
-        alt="Elegant Frock"
-        className="w-full h-[450px] object-cover"
-      />
-      <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Elegant Frock</p>
-        <p className="text-gray-600 text-sm">Embroidered | Cotton Net</p>
-        <p className="text-black font-semibold text-sm">Rs. 4,850</p>
-      </div>
-    </div>
-
-    {/* Product Card 6 */}
-    <div className="flex flex-col">
-      <img
-        src="/images/18.jpeg"
-        alt="Minimalist Shirt"
-        className="w-full h-[450px] object-cover"
-      />
-      <div className="text-left mt-2 pl-2">
-        <p className="font-medium text-sm text-gray-800">Minimalist Shirt</p>
-        <p className="text-gray-600 text-sm">Solid | Lawn</p>
-        <p className="text-black font-semibold text-sm">Rs. 1,950</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 {/* New Arrival Section */}
@@ -192,47 +130,29 @@ const Women = () => {
 
   {/* Grid Layout */}
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    {/* Large Left Card */}
-    <div className="col-span-1 lg:col-span-1  p-4">
-      <img
-        src="/images/11.jpeg"
-        alt="New Arrival 1"
-        className="w-full h-[540px] object-cover"
-      />
-    </div>
-
-    {/* 4 Small Cards on Right in 2 Rows */}
-    <div className="col-span-1 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <div className=" p-2">
-        <img
-          src="/images/13.jpeg"
-          alt="New Arrival 2"
-          className="w-full h-[250px] object-cover"
-        />
-      </div>
-      <div className=" p-2">
-        <img
-          src="/images/14.jpeg"
-          alt="New Arrival 3"
-          className="w-full h-[250px] object-cover"
-        />
-      </div>
-      <div className=" p-2">
-        <img
-          src="/images/9.jpeg"
-          alt="New Arrival 4"
-          className="w-full h-[250px] object-cover"
-        />
-      </div>
-      <div className=" p-2">
-        <img
-          src="/images/6.jpeg"
-          alt="New Arrival 5"
-          className="w-full h-[250px] object-cover"
-        />
-      </div>
-    </div>
+  {/* Left large card */}
+  <div className="p-2">
+    <img
+      src="/images/11.jpeg"
+      alt="New Arrival 1"
+      className="w-full h-80 sm:h-[640px] object-cover rounded-md"
+    />
   </div>
+
+  {/* Right 4 cards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 col-span-2">
+    {['13', '14', '9', '6'].map((num) => (
+      <div key={num} className="p-2">
+        <img
+          src={`/images/${num}.jpeg`}
+          alt={`New Arrival ${num}`}
+          className="w-full h-62 sm:h-[300px] object-cover rounded-md"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
 </div>
 
 
