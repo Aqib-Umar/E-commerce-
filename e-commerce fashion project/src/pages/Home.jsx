@@ -97,7 +97,7 @@ const Home = () => {
               <img
                 src="/images/18.jpeg"
                 alt="Serika"
-                className="w-full h-72 sm:h-[400px] object-cover rounded"
+                className="w-full h-116 sm:h-[500px] object-cover rounded"
               />
               <p className="mt-4 text-base sm:text-lg font-semibold text-gray-800">
                 Serika Premium up to 60% off
@@ -108,7 +108,7 @@ const Home = () => {
               <img
                 src="/images/19.jpeg"
                 alt="Al-Harir"
-                className="w-full h-72 sm:h-[400px] object-cover rounded"
+                className="w-full h-116  sm:h-[500px] object-cover rounded"
               />
               <p className="mt-4 text-base sm:text-lg font-semibold text-gray-800">
                 Al-Harir Apparel up to 40% off
@@ -119,7 +119,7 @@ const Home = () => {
               <img
                 src="/images/24.jpeg"
                 alt="Inayat"
-                className="w-full h-72 sm:h-[400px] object-cover rounded"
+                className="w-full h-116  sm:h-[500px] object-cover rounded"
               />
               <p className="mt-4 text-base sm:text-lg font-semibold text-gray-800">
                 Inayat up to 30% off
