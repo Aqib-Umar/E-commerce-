@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-pink-100 text-gray-800">
+    <footer className="bg-gray-50 text-gray-800">
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 items-center">
           {/* Logo on the left, centered vertically */}
