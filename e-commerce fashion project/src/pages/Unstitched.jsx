@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import {
   SlidersHorizontal,
   Truck,
@@ -11,36 +12,48 @@ import {
 } from 'lucide-react';
 
 const stitched1Pcs = [
-  { id: 1, img: '/images/25.jpeg', title: 'Ladies suit AL 01', price: 1900 },
-  { id: 2, img: '/images/24.jpeg', title: 'Ladies suit AL 02', price: 2000 },
-  { id: 3, img: '/images/23.jpeg', title: 'Ladies suit AL 03', price: 2100 },
-  { id: 4, img: '/images/22.jpeg', title: 'Ladies suit AL 04', price: 2200 },
+  { id: 1, img: '/images/25.jpeg', title: 'Ladies suit AL 01', price: 1900, sku: 'AL01' },
+  { id: 2, img: '/images/24.jpeg', title: 'Ladies suit AL 02', price: 2000, sku: 'AL02' },
+  { id: 3, img: '/images/23.jpeg', title: 'Ladies suit AL 03', price: 2100, sku: 'AL03' },
+  { id: 4, img: '/images/22.jpeg', title: 'Ladies suit AL 04', price: 2200, sku: 'AL04' },
 ];
 
 const stitched2Pcs = [
-  { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650 },
-  { id: 6, img: '/images/17.jpeg', title: 'Ladies suit BL 02', price: 2800 },
-  { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950 },
-  { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100 },
+  { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650, sku: 'BL01' },
+  { id: 6, img: '/images/17.jpeg', title: 'Ladies suit BL 02', price: 2800, sku: 'BL02' },
+  { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950, sku: 'BL03' },
+  { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100, sku: 'BL04' },
 ];
 
 const stitched3Pcs = [
-  { id: 9, img: '/images/17.jpeg', title: 'Ladies suit CL 01', price: 3400 },
-  { id: 10, img: '/images/16.jpeg', title: 'Ladies suit CL 02', price: 3600 },
-  { id: 11, img: '/images/15.jpeg', title: 'Ladies suit CL 03', price: 3800 },
-  { id: 12, img: '/images/14.jpeg', title: 'Ladies suit CL 04', price: 4000 },
+  { id: 9, img: '/images/17.jpeg', title: 'Ladies suit CL 01', price: 3400, sku: 'CL01' },
+  { id: 10, img: '/images/16.jpeg', title: 'Ladies suit CL 02', price: 3600, sku: 'CL02' },
+  { id: 11, img: '/images/15.jpeg', title: 'Ladies suit CL 03', price: 3800, sku: 'CL03' },
+  { id: 12, img: '/images/14.jpeg', title: 'Ladies suit CL 04', price: 4000, sku: 'CL04' },
 ];
 
 export default function Stitched() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [addingToCart, setAddingToCart] = useState(null);
   const itemsPerPage = 8;
 
-  // Dummy addToCart function (replace with your actual cart logic)
-  const addToCart = (item) => {
-    // For now, just alert or log the item
-    alert(`Added to cart: ${item.title}`);
-    // You can replace this with your actual cart logic
+  // Use the cart context
+  const { addToCart } = useCart();
+
+  const handleAddToCart = async (item) => {
+    setAddingToCart(item.id);
+    
+    // Add item to cart with quantity 1
+    addToCart({
+      ...item,
+      quantity: 1
+    });
+
+    // Show success feedback
+    setTimeout(() => {
+      setAddingToCart(null);
+    }, 1000);
   };
   
   // Combine all products
@@ -71,7 +84,7 @@ export default function Stitched() {
         <h1 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2">WOMEN'S</h1>
         <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">UnStitched Suit</h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-          Elisha offers a vast selection of women’s clothing to shop. Each season <br />
+          Elisha offers a vast selection of women's clothing to shop. Each season <br />
           finds a careful assortment of clothing no matter the season, trend-driven <br />
           and classic pieces are available. Elisha is committed to helping shoppers <br />
           be their most stylish selves.
@@ -152,10 +165,15 @@ export default function Stitched() {
                   PKR: {item.price}
                 </div>
                 <button
-                  className="text-[#5C4033] border border-[#5C4033] px-4 py-2 rounded text-sm font-medium hover:bg-[#5C4033] hover:text-white transition"
-                  onClick={() => addToCart({ ...item, quantity: 1 })}
+                  className={`px-4 py-2 rounded text-sm font-medium transition ${
+                    addingToCart === item.id
+                      ? 'bg-green-500 text-white'
+                      : 'text-[#5C4033] border border-[#5C4033] hover:bg-[#5C4033] hover:text-white'
+                  }`}
+                  onClick={() => handleAddToCart(item)}
+                  disabled={addingToCart === item.id}
                 >
-                  Buy Now
+                  {addingToCart === item.id ? 'Added!' : 'Buy Now'}
                 </button>
               </div>
             </div>

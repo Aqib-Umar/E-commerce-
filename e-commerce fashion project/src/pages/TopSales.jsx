@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import {
   SlidersHorizontal,
   Truck,
@@ -11,35 +12,48 @@ import {
 } from 'lucide-react';
 
 const stitched1Pcs = [
-  { id: 1, img: '/images/25.jpeg', title: 'Ladies suit AL 01', price: 1900 , design: 'Printed | Cambric' },
-  { id: 2, img: '/images/24.jpeg', title: 'Ladies suit AL 02', price: 2000 , design: 'Embroid | Cambric' },
-  { id: 3, img: '/images/23.jpeg', title: 'Ladies suit AL 03', price: 2100 , design: 'Printed | Lawn' },
-  { id: 4, img: '/images/22.jpeg', title: 'Ladies suit AL 04', price: 2200 , design: 'Embroid| Lawn' },
+  { id: 1, img: '/images/25.jpeg', title: 'Ladies suit AL 01', price: 1900, design: 'Printed | Cambric', sku: 'AL01' },
+  { id: 2, img: '/images/24.jpeg', title: 'Ladies suit AL 02', price: 2000, design: 'Embroid | Cambric', sku: 'AL02' },
+  { id: 3, img: '/images/23.jpeg', title: 'Ladies suit AL 03', price: 2100, design: 'Printed | Lawn', sku: 'AL03' },
+  { id: 4, img: '/images/22.jpeg', title: 'Ladies suit AL 04', price: 2200, design: 'Embroid| Lawn', sku: 'AL04' },
 ];
 
 const stitched2Pcs = [
-  { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650 , design: 'Printed | Cambric' },
-  { id: 6, img: '/images/17.jpeg', title: 'Ladies suit BL 02', price: 2800 , design: 'Embroid | Cambric' },
-  { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950 , design: 'Printed | Lawn' },
-  { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100 , design: 'Embroid| Lawn' },
+  { id: 5, img: '/images/21.jpeg', title: 'Ladies suit BL 01', price: 2650, design: 'Printed | Cambric', sku: 'BL01' },
+  { id: 6, img: '/images/17.jpeg', title: 'Ladies suit BL 02', price: 2800, design: 'Embroid | Cambric', sku: 'BL02' },
+  { id: 7, img: '/images/19.jpeg', title: 'Ladies suit BL 03', price: 2950, design: 'Printed | Lawn', sku: 'BL03' },
+  { id: 8, img: '/images/18.jpeg', title: 'Ladies suit BL 04', price: 3100, design: 'Embroid| Lawn', sku: 'BL04' },
 ];
 
 const stitched3Pcs = [
-  { id: 9, img: '/images/17.jpeg', title: 'Ladies suit CL 01', price: 3400 , design: 'Printed | Cambric' },
-  { id: 10, img: '/images/16.jpeg', title: 'Ladies suit CL 02', price: 3600 , design: 'Embroid | Cambric' },
-  { id: 11, img: '/images/15.jpeg', title: 'Ladies suit CL 03', price: 3800 , design: 'Printed | Lawn' },
-  { id: 12, img: '/images/14.jpeg', title: 'Ladies suit CL 04', price: 4000 , design: 'Embroid| Lawn' },
+  { id: 9, img: '/images/17.jpeg', title: 'Ladies suit CL 01', price: 3400, design: 'Printed | Cambric', sku: 'CL01' },
+  { id: 10, img: '/images/16.jpeg', title: 'Ladies suit CL 02', price: 3600, design: 'Embroid | Cambric', sku: 'CL02' },
+  { id: 11, img: '/images/15.jpeg', title: 'Ladies suit CL 03', price: 3800, design: 'Printed | Lawn', sku: 'CL03' },
+  { id: 12, img: '/images/14.jpeg', title: 'Ladies suit CL 04', price: 4000, design: 'Embroid| Lawn', sku: 'CL04' },
 ];
 
-export default function Stitched() {
+export default function TopSale() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [addingToCart, setAddingToCart] = useState(null);
   const itemsPerPage = 8;
 
-  // Dummy addToCart function (replace with your actual implementation or import)
-  const addToCart = (item) => {
-    // You can replace this with your cart logic or context
-    alert(`Added ${item.title} to cart!`);
+  // Use the cart context
+  const { addToCart } = useCart();
+
+  const handleAddToCart = async (item) => {
+    setAddingToCart(item.id);
+    
+    // Add item to cart with quantity 1
+    addToCart({
+      ...item,
+      quantity: 1
+    });
+
+    // Show success feedback
+    setTimeout(() => {
+      setAddingToCart(null);
+    }, 1000);
   };
   
   // Combine all products
@@ -67,10 +81,9 @@ export default function Stitched() {
   return (
     <div className="py-10 bg-gray-50 px-4">
       <div className="text-center mb-6 px-4">
-        
         <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">Top Sales</h2>
         <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-          Elisha offers a vast selection of women’s clothing to shop. Each season <br />
+          Elisha offers a vast selection of women's clothing to shop. Each season <br />
           finds a careful assortment of clothing no matter the season, trend-driven <br />
           and classic pieces are available. Elisha is committed to helping shoppers <br />
           be their most stylish selves.
@@ -116,38 +129,37 @@ export default function Stitched() {
       </div>
 
       <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6 mb-12">
-  {/* Left Arrow - Only show on md and above */}
-  <button className="hidden md:block text-2xl font-bold text-gray-600 hover:text-black">&lt;</button>
+        {/* Left Arrow - Only show on md and above */}
+        <button className="hidden md:block text-2xl font-bold text-gray-600 hover:text-black">&lt;</button>
 
-  {/* Category Circles */}
-  {[
-    { src: '/images/1.jpeg', alt: 'University Wear', label: 'UNIVERSITY WEAR', discount: '70%' },
-    { src: '/images/2.jpeg', alt: 'Desi Wear', label: 'DESI WEAR', discount: '50%' },
-    { src: '/images/3.jpeg', alt: 'Shaddi Baya Wear', label: 'SHADDI WEAR', discount: '40%' },
-    { src: '/images/4.jpeg', alt: 'Abayas', label: 'ABAYAS', discount: '30%' },
-  ].map((image, index) => (
-    <div key={index} className="flex flex-col items-center w-24 sm:w-32">
-      <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-[4px] sm:border-[6px] border-[#5C4033] overflow-hidden">
-        <img
-          src={image.src}
-          alt={image.alt}
-          className="w-full h-full object-cover rounded-full"
-        />
-        {/* Discount Overlay */}
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-full bg-[#f2f2f2f5] text-center py-1 sm:py-2 font-bold text-xs sm:text-sm text-black">
-          {image.discount}
-        </div>
+        {/* Category Circles */}
+        {[
+          { src: '/images/1.jpeg', alt: 'University Wear', label: 'UNIVERSITY WEAR', discount: '70%' },
+          { src: '/images/2.jpeg', alt: 'Desi Wear', label: 'DESI WEAR', discount: '50%' },
+          { src: '/images/3.jpeg', alt: 'Shaddi Baya Wear', label: 'SHADDI WEAR', discount: '40%' },
+          { src: '/images/4.jpeg', alt: 'Abayas', label: 'ABAYAS', discount: '30%' },
+        ].map((image, index) => (
+          <div key={index} className="flex flex-col items-center w-24 sm:w-32">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-[4px] sm:border-[6px] border-[#5C4033] overflow-hidden">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover rounded-full"
+              />
+              {/* Discount Overlay */}
+              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-full bg-[#f2f2f2f5] text-center py-1 sm:py-2 font-bold text-xs sm:text-sm text-black">
+                {image.discount}
+              </div>
+            </div>
+            <p className="text-[10px] sm:text-sm font-semibold text-gray-800 mt-2 text-center leading-tight">
+              {image.label}
+            </p>
+          </div>
+        ))}
+
+        {/* Right Arrow - Only show on md and above */}
+        <button className="hidden md:block text-2xl font-bold text-gray-600 hover:text-black">&gt;</button>
       </div>
-      <p className="text-[10px] sm:text-sm font-semibold text-gray-800 mt-2 text-center leading-tight">
-        {image.label}
-      </p>
-    </div>
-  ))}
-
-  {/* Right Arrow - Only show on md and above */}
-  <button className="hidden md:block text-2xl font-bold text-gray-600 hover:text-black">&gt;</button>
-</div>
-
 
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -171,10 +183,15 @@ export default function Stitched() {
                     40%Off
                   </button>
                   <button
-                    className="text-[#5C4033] border border-[#5C4033] px-4 py-2 rounded text-sm font-medium hover:bg-[#5C4033] hover:text-white transition"
-                    onClick={() => addToCart({ ...item, quantity: 1 })}
+                    className={`px-4 py-2 rounded text-sm font-medium transition ${
+                      addingToCart === item.id
+                        ? 'bg-green-500 text-white'
+                        : 'text-[#5C4033] border border-[#5C4033] hover:bg-[#5C4033] hover:text-white'
+                    }`}
+                    onClick={() => handleAddToCart(item)}
+                    disabled={addingToCart === item.id}
                   >
-                    Buy Now
+                    {addingToCart === item.id ? 'Added!' : 'Buy Now'}
                   </button>
                 </div>
               </div>
