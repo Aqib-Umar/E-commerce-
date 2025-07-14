@@ -1,10 +1,13 @@
 // src/components/Header.jsx
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // Import cart context
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  console.log('Header rendering...'); // Add this
+  const { cartCount } = useCart(); // Get cart count from context
   
   const navLinks = [
     { title: 'Home', path: '/' },
@@ -26,25 +29,26 @@ const Header = () => {
       </div>
 
       {/* 🔶 Top bar with logo in center and icons on right */}
-      <div className="bg-gray-50 py-9 px-6">
-        <div className="container mx-auto relative flex items-center justify-between">
+      <div className="bg-gray-50 py-4 md:py-6 px-4 md:px-6 relative">
+        <div className="container mx-auto flex items-center justify-between">
           
           {/* Invisible placeholder (for symmetry) */}
-          <div className="w-24 md:w-36"></div>
+          <div className="w-10 md:w-24"></div>
 
           {/* Logo - Centered */}
-<div className="absolute left-1/2 transform -translate-x-1/2">
-  <img
-    src="/images/logo1.png"
-    alt="Logo"
-    className="w-28 h-28 object-contain rounded-xl "
-  />
-</div>
-
+          <div className="absolute left-1/2 transform -translate-x-1/2 -top-1 md:-top-2">
+            <Link to="/">
+              <img
+                src="/images/logo1.png"
+                alt="Logo"
+                className="w-20 h-20 md:w-28 md:h-28 object-contain rounded-xl"
+              />
+            </Link>
+          </div>
 
           {/* Right side icons */}
-          <div className="flex items-center space-x-6">
-            {/* Search icon only */}
+          <div className="flex items-center space-x-4 md:space-x-6 ml-auto">
+            {/* Search icon */}
             <div className="cursor-pointer">
               <svg 
                 className="w-5 h-5 text-gray-500" 
@@ -59,19 +63,24 @@ const Header = () => {
 
             {/* Login icon */}
             <Link to="/login" className="text-gray-600 hover:text-black transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </Link>
 
-            {/* Cart icon (empty) */}
+            {/* Cart icon with badge */}
             <Link to="/cart" className="text-gray-600 hover:text-black transition-colors relative">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-              {/* No badge since cart is empty */}
+              {/* Cart badge - only show when items in cart */}
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
@@ -92,7 +101,7 @@ const Header = () => {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex justify-center flex-grow">
-            <div className="flex space-x-8">
+            <div className="flex space-x-4 lg:space-x-8">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
                 return (

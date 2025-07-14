@@ -35,6 +35,13 @@ export default function Stitched() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
+
+  // Dummy addToCart function (replace with your actual cart logic)
+  const addToCart = (item) => {
+    // For now, just alert or log the item
+    alert(`Added to cart: ${item.title}`);
+    // You can replace this with your actual cart logic
+  };
   
   // Combine all products
   const allProducts = [...stitched1Pcs, ...stitched2Pcs, ...stitched3Pcs];
@@ -144,7 +151,10 @@ export default function Stitched() {
                   {item.title} <br />
                   PKR: {item.price}
                 </div>
-                <button className="text-[#5C4033] border border-[#5C4033] px-4 py-2 rounded text-sm font-medium hover:bg-[#5C4033] hover:text-white transition">
+                <button
+                  className="text-[#5C4033] border border-[#5C4033] px-4 py-2 rounded text-sm font-medium hover:bg-[#5C4033] hover:text-white transition"
+                  onClick={() => addToCart({ ...item, quantity: 1 })}
+                >
                   Buy Now
                 </button>
               </div>

@@ -12,9 +12,12 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Unstitched from './pages/Unstitched';
 import Stitched from './pages/stitched';
+import { CartProvider } from './context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   return (
+    <CartProvider>
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -29,12 +32,14 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/unstitched" element={<Unstitched />} />
+            <Route path="/cart" element={<Cart />} />
+
           </Routes>
         </main>
         <Footer />
       </div>
     </Router>
-    
+    </CartProvider>
   );
 }
 
